@@ -6,15 +6,15 @@
 
 --   Which concepts need to be applied?
 --   Which tables to check to get the required data? 
---	 Which columns to include in resulting table?
---	 What criteria needs to be fulfilled?
+--   Which columns to include in resulting table?
+--   What criteria needs to be fulfilled?
 
 --b. Answers to the above questions using SQL queries.
 
 --   The concepts applied include data sorting and basic SQL queries.
 --   Used FROM clause to check and use employee table for all the necessary details.  
---	 Used SELECT clause to pick necessary columns for complete employee records.
---	 Used ORDER BY and LIMIT clause to sort result in descending order and restrict the entries as per the desired result.
+--   Used SELECT clause to pick necessary columns for complete employee records.
+--   Used ORDER BY and LIMIT clause to sort result in descending order and restrict the entries as per the desired result.
 
 SELECT employee_id, first_name, last_name, levels
 FROM employee
@@ -29,15 +29,15 @@ LIMIT 1;
 
 --   Which concepts need to be applied?
 --   Which tables to check to get the required data? 
---	 Which columns to include in resulting table?
---	 What criteria needs to be fulfilled ?
+--   Which columns to include in resulting table?
+--   What criteria needs to be fulfilled ?
 
 --b. Answers to the above questions using SQL queries:
 
 --   The concepts applied include data aggregation, sorting, and basic SQL query.
 --   Used FROM clause to check and use invoice table for all the necessary details.  
 --   Used the SELECT clause to include necessary columns in the resulting table.
---	 Used GROUP BY clause to aggregate data based on country. ORDER BY and LIMIT clause to sort result in descending order and restrict the entries as per the desired result.
+--   Used GROUP BY clause to aggregate data based on country. ORDER BY and LIMIT clause to sort result in descending order and restrict the entries as per the desired result.
 
 SELECT COUNT(invoice_id)AS invoices, billing_country
 FROM invoice
@@ -53,15 +53,15 @@ LIMIT 5;
 
 --   Which concepts need to be applied?
 --   Which tables to check to get the required data? 
---	 Which columns to include in resulting table?
---	 What criteria needs to be fulfilled ?
+--   Which columns to include in resulting table?
+--   What criteria needs to be fulfilled ?
 
 --b. Answers to the above questions using SQL queries:
 
 --   The concepts applied include data aggregation, sorting, and basic SQL query.
 --   Used FROM clause to check and use invoice table for all the necessary details.  
---	 Used SELECT clause and applied agrreagate function to include necessary columns in the resulting table.
---	 Used GROUP BY clause to aggregate data based on city. ORDER BY and LIMIT clause to sort result in descending order and restrict the entries as per the desired result.
+--   Used SELECT clause and applied agrreagate function to include necessary columns in the resulting table.
+--   Used GROUP BY clause to aggregate data based on city. ORDER BY and LIMIT clause to sort result in descending order and restrict the entries as per the desired result.
 
 SELECT billing_city, SUM(total) AS invoice_totals
 FROM invoice
@@ -77,15 +77,15 @@ LIMIT 10;
 
 --   Which concepts need to be applied?
 --   Which tables to check to get the required data? 
---	 Which columns to include in resulting table?
---	 What criteria needs to be fulfilled?
+--   Which columns to include in resulting table?
+--   What criteria needs to be fulfilled?
 
 --b. Answers to the above questions using SQL queries.
 
 --   The concepts applied include data sorting and basic SQL query.
 --   Used FROM clause to check and use invoice table for all the necessary details.  
 --   Used the SELECT clause to include necessary columns in the resulting table.
---	 Used ORDER BY and LIMIT clause to sort result in descending order and restrict the entries as per the desired result.
+--   Used ORDER BY and LIMIT clause to sort result in descending order and restrict the entries as per the desired result.
 
 SELECT customer_id, total
 FROM invoice
@@ -100,15 +100,15 @@ LIMIT 10;
 
 --   Which concepts need to be applied?
 --   Which tables to check to get the required data? 
---	 Which columns to include in resulting table?
---	 What criteria needs to be fulfilled?
+--   Which columns to include in resulting table?
+--   What criteria needs to be fulfilled?
 
 --b. Answers to the above questions using SQL queries.
 
 --   The concepts applied include joins, data aggregation, sorting, and basic SQL query.
 --   Used FROM clause and employed JOIN operations between the customer and invoice tables based on common column to retrieve all the necessary details.
 --   Used the SELECT clause to include necessary columns in the resulting table.
---	 Used GROUP BY clause to aggregate data based on customer_id. ORDER BY and LIMIT clause to sort result in descending order and restrict the entries as per the desired result.
+--   Used GROUP BY clause to aggregate data based on customer_id. ORDER BY and LIMIT clause to sort result in descending order and restrict the entries as per the desired result.
 
 SELECT customer.customer_id, customer.first_name, customer.last_name, SUM(invoice.total) AS invoice_total
 FROM customer 
@@ -125,15 +125,15 @@ LIMIT 1;
 
 --   Which concepts need to be applied?
 --   Which tables to check to get the required data? 
---	 Which columns to include in resulting table?
---	 What criteria needs to be fulfilled?
+--   Which columns to include in resulting table?
+--   What criteria needs to be fulfilled?
 
 --b. Answers to the above questions using SQL queries.
 
 --   The concepts applied include joins, sub-query, data sorting and filteration, and basic SQL query.
 --   Used FROM clause and employed JOIN operations between 3 tables(customer, invoice, invoice_line) based on common column to retrieve all the necessary details.
 --   Used the SELECT clause to include necessary columns in the resulting table.
---	 Used sub-query in WHERE clause and joined track and genre table to filter data based on genre. Used ORDER BY clause to sort result in ascending order.
+--   Used sub-query in WHERE clause and joined track and genre table to filter data based on genre. Used ORDER BY clause to sort result in ascending order.
 
 SELECT DISTINCT customer.customer_id, customer.first_name, customer.last_name, customer.email
 FROM customer
@@ -154,15 +154,15 @@ ORDER BY customer.email;
 
 --   Which concepts need to be applied?
 --   Which tables to check to get the required data? 
---	 Which columns to include in resulting table?
---	 What criteria needs to be fulfilled?
+--   Which columns to include in resulting table?
+--   What criteria needs to be fulfilled?
 
 --b. Answers to the above questions using SQL queries.
 
 --   The concepts applied include joins, data aggregation, sorting and filteration, and basic SQL query.
 --   To address the query, used FROM clause and employed JOIN operations between 4 tables(track, album, genre, artist) based on common column to retrieve all the necessary details.
 --   Used the SELECT clause to include necessary columns in the resulting table.
---	 Filtered data using WHERE clause and used GROUP BY clause to aggregate data based on artist_id. Used ORDER BY and LIMIT clause to sort result in descending order and restrict the entries as per the desired result.
+--   Filtered data using WHERE clause and used GROUP BY clause to aggregate data based on artist_id. Used ORDER BY and LIMIT clause to sort result in descending order and restrict the entries as per the desired result.
 
 SELECT artist.artist_id, artist.name, COUNT(track.track_id) AS total_tracks
 FROM track
@@ -182,15 +182,15 @@ LIMIT 10;
 
 --   Which concepts need to be applied?
 --   Which tables to check to get the required data? 
---	 Which columns to include in resulting table?
---	 What criteria needs to be fulfilled?
+--   Which columns to include in resulting table?
+--   What criteria needs to be fulfilled?
 
 --b. Answers to the above questions using SQL queries.
 
 --   The concepts applied include sub-query in the WHERE clause, data sorting, filteration and basic SQL query.   
 --   Used FROM clause to check and use track table for all the necessary details.  
 --   Used the SELECT clause to include necessary columns in the resulting table.
---	 Filtered data based on track length. Used ORDER BY clause to sort resulting value in descending order.
+--   Filtered data based on track length. Used ORDER BY clause to sort resulting value in descending order.
 
 SELECT "name", milliseconds
 FROM track
@@ -208,15 +208,15 @@ ORDER BY milliseconds DESC;
 
 --   Which concepts need to be applied?
 --   Which tables to check to get the required data? 
---	 Which columns to include in resulting table?
---	 What criteria needs to be fulfilled?
+--   Which columns to include in resulting table?
+--   What criteria needs to be fulfilled?
 
 --b. Answers to the above questions using SQL queries.
 
 --   The concepts applied include window functions for ranking purpose, joins, data aggregation, sorting, and filteration, queried data using common table expressions(CTE) and then use it in the main query.
 --   Used FROM clause in CTE and employed JOIN operations between 4 tables(track, customer, genre, invoice, invoice_line) based on common column to retrieve all the necessary details.
 --   Used the SELECT clause to include necessary columns in the CTE and resulting table.
---	 Used GROUP BY to aggregate data by 2 columns (2,3). Applied ORDER BY to sort by 2nd column in the CTE. Filtered results using the WHERE clause in the main query to achieve the desired result.
+--   Used GROUP BY to aggregate data by 2 columns (2,3). Applied ORDER BY to sort by 2nd column in the CTE. Filtered results using the WHERE clause in the main query to achieve the desired result.
 
 WITH popular_genre AS
 (
@@ -243,15 +243,15 @@ WHERE row_num <= 1;
 
 --   Which concepts need to be applied?
 --   Which tables to check to get the required data? 
---	 Which columns to include in resulting table?
---	 What criteria needs to be fulfilled?
+--   Which columns to include in resulting table?
+--   What criteria needs to be fulfilled?
 
 --b. Answers to the above questions using SQL queries.
 
 --   The concepts applied include window functions for ranking purpose, data aggregation, sorting, filteration, queried data using common table expressions(CTE) and then use it in the main query.
 --   Used FROM clause in CTE to check and use invoice table for all the necessary details.  
 --   Used the SELECT clause to include necessary columns in the resulting table.
---	 Used GROUP BY to aggregate data by 2 columns (1,2). Applied ORDER BY to sort by 2 columns (2,3) in the CTE. Filtered results using the WHERE clause in the main query to achieve the desired result.
+--   Used GROUP BY to aggregate data by 2 columns (1,2). Applied ORDER BY to sort by 2 columns (2,3) in the CTE. Filtered results using the WHERE clause in the main query to achieve the desired result.
 
 WITH cust_country_spent AS(
 		SELECT customer_id, billing_country, SUM(total) AS total_spent,
